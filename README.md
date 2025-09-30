@@ -70,7 +70,7 @@ initials=f"{surname[0]}{name[0]}{secondname[0]}."
 print("Инициалы:" , initials)
 print("Длина(символов):" , len(fullname))
 ```
-![Картинка 5](/images/05_output.png)
+![Картинка 5](/images/05_0utput.png)
 
 # Вывод
 
