@@ -9,4 +9,4 @@ if len(fullname1)==3:
 initials=f"{surname[0]}{name[0]}{secondname[0]}."
 
 print("Инициалы:" , initials)
-print("Длина(символов):" , len(fullname))
+print("Длина(символов):" , len(fullname)+2)
