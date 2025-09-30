@@ -57,12 +57,18 @@ print(f"{m//60}:{m-(m//60)*60}")
 ## Задание 5
 
 ```python
-fullname = input("ФИО: ")
-name, second_name, last_name = [str(x) for x in fullname if x in "ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮЁ"]
-fullname1 = "".join([name, second_name, last_name])
+fullname = str(input(("Введите ФИО: ")))
+fullname = " ".join(fullname.split())
+fullname1 = fullname.split()
 
-print(f'Инициалы: {fullname1}')
-print(f'Длина (символов): {len(fullname)}')
+fullname = fullname.replace(' ', "")
+
+if len(fullname1)==3:
+    surname, name, secondname = fullname1
+initials=f"{surname[0]}{name[0]}{secondname[0]}."
+
+print("Инициалы:" , initials)
+print("Длина(символов):" , len(fullname))
 ```
 ![Картинка 5](/images/05_output.png)
 
