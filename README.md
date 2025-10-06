@@ -50,7 +50,7 @@ print(f'Итого к оплате: {'%.2f'%total} ₽')
 
 ```python
 m = int(input('Минуты: '))
-print(f"{m//60}:{m-(m//60)*60}")
+print(f"{m//60}:{(m-(m//60)*60):02d}")
 ```
 ![Картинка 4](/images/04_output.png)
 
@@ -68,7 +68,7 @@ if len(fullname1)==3:
 initials=f"{surname[0]}{name[0]}{secondname[0]}."
 
 print("Инициалы:" , initials)
-print("Длина(символов):" , len(fullname))
+print("Длина(символов):" , len(fullname)+2)
 ```
 ![Картинка 5](/images/05_0utput.png)
 
