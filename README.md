@@ -95,7 +95,7 @@ print(min_max([-5, -2, -9]))
 print(min_max([]))
 print(min_max([1.5, 2, 2.0, -3.1]))
 ```
-![Картинка 1](/images/min_max_output.png)
+![Картинка 1](./images/min_max_output.png)
 
 ## Задание 2
 
@@ -109,7 +109,7 @@ print(unique_sorted([]))
 print(unique_sorted([-1, -1, 0, 2, 2]))
 print(unique_sorted([1.0, 1, 2.5, 2.5, 0]))
 ```
-![Картинка 2](/images/unique_sorted_output.png)
+![Картинка 2](./images/unique_sorted_output.png)
 
 ## Задание 3
 
@@ -129,7 +129,7 @@ print(flatten(([1, 2], (3, 4, 5))))
 print(flatten([[1], [], [2, 3]]))
 print(flatten([[1, 2], "ab"]))
 ```
-![Картинка 3](/images/flatten_output.png)
+![Картинка 3](./images/flatten_output.png)
 
 ## Задание 4
 
@@ -151,7 +151,7 @@ print(transpose([[1,2],[3,4]]))
 print(transpose([[1,2],[3]]))
 print(transpose([[]]))
 ```
-![Картинка 4](/images/transpose_output.png)
+![Картинка 4](./images/transpose_output.png)
 
 ## Задание 5
 
@@ -172,7 +172,7 @@ print(row_sums([[-1, 1], [10, -10]]))
 print(row_sums([[0,0], [0,0]]))
 print(row_sums([[1,2], [3]]))
 ```
-![Картинка 5](/images/row_sums_output.png)
+![Картинка 5](./images/row_sums_output.png)
 
 ## Задание 6
 
@@ -192,7 +192,7 @@ print(col_sums([[-1, 1], [10, -10]]))
 print(col_sums([[0, 0], [0, 0]]))
 print(col_sums([[1, 2], [3]]))
 ```
-![Картинка 6](/images/col_sums_output.png)
+![Картинка 6](./images/col_sums_output.png)
 
 ## Задание 7
 
@@ -221,7 +221,7 @@ print(format_record(("Петров Пётр Петрович", "IKBO-12", 5.0)))
 print(format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999)))
 print(format_record((34141, "BIVT-25", 4.6)))
 ```
-![Картинка 7](/images/tuples_output.png)
+![Картинка 7](./images/tuples_output.png)
 
 # Вывод
 Я освоила базовые операции с данными: поиск минимума и максимума, удаление дубликатов, работу с матрицами и текстом. Теперь я умею работать с данными: убирать повторы, суммировать матрицы и форматировать текст.
