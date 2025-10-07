@@ -75,3 +75,154 @@ print("Длина(символов):" , len(fullname)+2)
 # Вывод
 
 Практически освоила основы Python: научилась работать с вводом данных, проводить расчеты и обрабатывать строки. На основе этих знаний смогу создавать консольные программы для решения конкретных задач. Освоила Github.
+
+# Лабороторная работа 2
+
+## Задание 1
+
+```python
+#1_min_max
+def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
+    if not nums:
+        raise ValueError
+    minimum = min(nums)
+    maximum = max(nums) 
+    return(minimum,maximum)
+
+print(min_max([3, -1, 5, 5, 0]))
+print(min_max([42]))
+print(min_max([-5, -2, -9]))
+print(min_max([]))
+print(min_max([1.5, 2, 2.0, -3.1]))
+```
+![Картинка 1](/images/min_max_output.png)
+
+## Задание 2
+
+```python
+#2_unique_sorted
+def unique_sorted(nums: list[float | int]) -> list[float | int]:
+    return(sorted(set(nums)))
+
+print(unique_sorted([3, 1, 2, 1, 3]))
+print(unique_sorted([]))
+print(unique_sorted([-1, -1, 0, 2, 2]))
+print(unique_sorted([1.0, 1, 2.5, 2.5, 0]))
+```
+![Картинка 2](/images/unique_sorted_output.png)
+
+## Задание 3
+
+```python
+#3_flatten
+def flatten(mat: list[list | tuple]) -> list:
+    result = []
+    for row in mat:
+        if isinstance(row,(tuple,list)):
+            result.extend(row)
+        else:
+            raise TypeError
+    return(result)
+
+print(flatten([[1, 2], [3, 4]]))
+print(flatten(([1, 2], (3, 4, 5))))
+print(flatten([[1], [], [2, 3]]))
+print(flatten([[1, 2], "ab"]))
+```
+![Картинка 3](/images/flatten_output.png)
+
+## Задание 4
+
+```python
+#1_transpose
+def transpose(mat: list[list[float | int]]):
+    if not mat:
+        return []
+    rows=len(mat)
+    cols=len(mat[0])
+    for row in mat:
+        if len(row)!=cols:
+            raise ValueError
+    new_mat = [[mat[i][j] for i in range(rows)] for j in range(cols)]
+    return new_mat
+print(transpose([[1, 2, 3]]))
+print(transpose([[1],[2], [3]]))
+print(transpose([[1,2],[3,4]]))
+print(transpose([[1,2],[3]]))
+print(transpose([[]]))
+```
+![Картинка 4](/images/transpose_output.png)
+
+## Задание 5
+
+```python
+#2_row_sums
+def row_sums(mat: list[list[float | int]]):
+    if not mat:
+        return []
+    rows = len(mat)
+    cols = len(mat[0])
+    for row in mat:
+        if len(row) != cols:
+            raise ValueError
+    sums=[sum(row) for row in mat]
+    return sums
+print(row_sums([[1,2,3], [4,5,6]]))
+print(row_sums([[-1, 1], [10, -10]]))
+print(row_sums([[0,0], [0,0]]))
+print(row_sums([[1,2], [3]]))
+```
+![Картинка 5](/images/row_sums_output.png)
+
+## Задание 6
+
+```python
+def col_sums(mat: list[list[float | int]]):
+    if not mat:
+        return []
+    rows = len(mat)
+    cols = len(mat[0])
+    for row in mat:
+        if len(row) != cols:
+            raise ValueError
+    sums = [sum(mat[i][j] for i in range(rows)) for j in range(cols)]
+    return sums
+print(col_sums([[1, 2, 3], [4, 5, 6]]))
+print(col_sums([[-1, 1], [10, -10]]))
+print(col_sums([[0, 0], [0, 0]]))
+print(col_sums([[1, 2], [3]]))
+```
+![Картинка 6](/images/col_sums_output.png)
+
+## Задание 7
+
+```python
+def format_record(rec: tuple[str, str, float]):
+    fio, group, gpa = rec
+    if not isinstance(fio, str) or not fio.strip():
+        raise ValueError("ФИО должно быть непустой строкой.")
+    if not isinstance(group, str) or not group.strip():
+        raise ValueError("Группа должна быть непустой строкой.")
+    if not isinstance(gpa, (int, float)):
+        raise ValueError("GPA должно быть числом.")
+    parts = fio.strip().split()
+    family = parts[0]
+    family=(family.title())
+    initials = ""
+    for part in parts[1:]:
+        initials += part[0].upper() + "."
+    if not initials:
+        initials = ""
+    form_gpa=f"{gpa:.2f}"
+    return f"{family} {initials}, гр. {group}, GPA {form_gpa}"
+print(format_record(("Петров Пётр", "IKBO-12", 5.0)))
+print(format_record(("Петров Пётр Петрович", "IKBO-12", 5.0)))
+print(format_record(("Петров Пётр Петрович", "IKBO-12", 5.0)))
+print(format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999)))
+print(format_record((34141, "BIVT-25", 4.6)))
+```
+![Картинка 7](/images/tuples_output.png)
+
+# Вывод
+Я освоила базовые операции с данными: поиск минимума и максимума, удаление дубликатов, работу с матрицами и текстом. Теперь я умею работать с данными: убирать повторы, суммировать матрицы и форматировать текст.
+
