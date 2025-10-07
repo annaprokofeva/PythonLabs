@@ -81,9 +81,10 @@ print("Длина(символов):" , len(fullname)+2)
 ## Задание 1
 
 ```python
+#1_min_max
 def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
     if not nums:
-        return ("ValueError")
+        raise ValueError
     minimum = min(nums)
     maximum = max(nums) 
     return(minimum,maximum)
@@ -99,6 +100,7 @@ print(min_max([1.5, 2, 2.0, -3.1]))
 ## Задание 2
 
 ```python
+#2_unique_sorted
 def unique_sorted(nums: list[float | int]) -> list[float | int]:
     return(sorted(set(nums)))
 
@@ -112,13 +114,14 @@ print(unique_sorted([1.0, 1, 2.5, 2.5, 0]))
 ## Задание 3
 
 ```python
+#3_flatten
 def flatten(mat: list[list | tuple]) -> list:
     result = []
     for row in mat:
         if isinstance(row,(tuple,list)):
             result.extend(row)
         else:
-            return ('TypeError')
+            raise TypeError
     return(result)
 
 print(flatten([[1, 2], [3, 4]]))
@@ -131,6 +134,7 @@ print(flatten([[1, 2], "ab"]))
 ## Задание 4
 
 ```python
+#1_transpose
 def transpose(mat: list[list[float | int]]):
     if not mat:
         return []
@@ -138,7 +142,7 @@ def transpose(mat: list[list[float | int]]):
     cols=len(mat[0])
     for row in mat:
         if len(row)!=cols:
-            return ("ValueError")
+            raise ValueError
     new_mat = [[mat[i][j] for i in range(rows)] for j in range(cols)]
     return new_mat
 print(transpose([[1, 2, 3]]))
@@ -152,6 +156,7 @@ print(transpose([[]]))
 ## Задание 5
 
 ```python
+#2_row_sums
 def row_sums(mat: list[list[float | int]]):
     if not mat:
         return []
@@ -159,7 +164,7 @@ def row_sums(mat: list[list[float | int]]):
     cols = len(mat[0])
     for row in mat:
         if len(row) != cols:
-            return ("ValueError")
+            raise ValueError
     sums=[sum(row) for row in mat]
     return sums
 print(row_sums([[1,2,3], [4,5,6]]))
@@ -179,7 +184,7 @@ def col_sums(mat: list[list[float | int]]):
     cols = len(mat[0])
     for row in mat:
         if len(row) != cols:
-            return ("ValueError")
+            raise ValueError
     sums = [sum(mat[i][j] for i in range(rows)) for j in range(cols)]
     return sums
 print(col_sums([[1, 2, 3], [4, 5, 6]]))
@@ -194,8 +199,15 @@ print(col_sums([[1, 2], [3]]))
 ```python
 def format_record(rec: tuple[str, str, float]):
     fio, group, gpa = rec
+    if not isinstance(fio, str) or not fio.strip():
+        raise ValueError("ФИО должно быть непустой строкой.")
+    if not isinstance(group, str) or not group.strip():
+        raise ValueError("Группа должна быть непустой строкой.")
+    if not isinstance(gpa, (int, float)):
+        raise ValueError("GPA должно быть числом.")
     parts = fio.strip().split()
     family = parts[0]
+    family=(family.title())
     initials = ""
     for part in parts[1:]:
         initials += part[0].upper() + "."
@@ -203,11 +215,11 @@ def format_record(rec: tuple[str, str, float]):
         initials = ""
     form_gpa=f"{gpa:.2f}"
     return f"{family} {initials}, гр. {group}, GPA {form_gpa}"
-print(format_record(("Иванов Иван Иванович", "BIVT-25", 4.6)))
 print(format_record(("Петров Пётр", "IKBO-12", 5.0)))
 print(format_record(("Петров Пётр Петрович", "IKBO-12", 5.0)))
 print(format_record(("Петров Пётр Петрович", "IKBO-12", 5.0)))
 print(format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999)))
+print(format_record((34141, "BIVT-25", 4.6)))
 ```
 ![Картинка 7](/images/tuples_output.png)
 
