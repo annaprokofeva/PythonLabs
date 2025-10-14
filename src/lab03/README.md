@@ -25,7 +25,7 @@ print(normalize("ёжик, Ёлка"))
 print(normalize("Hello\r\nWorld"))
 print(normalize(" двойные пробелы "))
 ```
-![Картинка 1](./images/normalize_output.png)
+![Картинка 1](PythonLabs/images/normalize_output.png)
 
 ## Задание 2
 
