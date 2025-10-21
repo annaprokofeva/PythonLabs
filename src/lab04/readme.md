@@ -16,14 +16,18 @@ def write_csv(rows: list, path: str, header: tuple = None) -> None:
         w.writerows(rows)
 ```
 Задание В:
-```
-import sys
+`import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from lab04.io_txt_csv import read_text, write_csv
 from lib.text import normalize, tokenize, count_freq, top_n
+
+def validate_output_file(filename):
+    path = Path(filename)
+    if path.suffix.lower() != '.csv':
+        raise ValueError()
 
 def main():
     input_file = "src/data/lab04/input.txt"  
