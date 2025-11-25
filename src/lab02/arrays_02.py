@@ -1,6 +1,7 @@
-#2_unique_sorted
+# 2_unique_sorted
 def unique_sorted(nums: list[float | int]) -> list[float | int]:
-    return(sorted(set(nums)))
+    return sorted(set(nums))
+
 
 print(unique_sorted([3, 1, 2, 1, 3]))
 print(unique_sorted([]))

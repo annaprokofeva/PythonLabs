@@ -1,4 +1,4 @@
-#3_col_sums
+# 3_col_sums
 def col_sums(mat: list[list[float | int]]):
     if not mat:
         return []
@@ -9,6 +9,8 @@ def col_sums(mat: list[list[float | int]]):
             raise ValueError
     sums = [sum(mat[i][j] for i in range(rows)) for j in range(cols)]
     return sums
+
+
 print(col_sums([[1, 2, 3], [4, 5, 6]]))
 print(col_sums([[-1, 1], [10, -10]]))
 print(col_sums([[0, 0], [0, 0]]))

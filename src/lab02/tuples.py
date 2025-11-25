@@ -8,14 +8,16 @@ def format_record(rec: tuple[str, str, float]):
         raise ValueError("GPA должно быть числом.")
     parts = fio.strip().split()
     family = parts[0]
-    family=(family.title())
+    family = family.title()
     initials = ""
     for part in parts[1:]:
         initials += part[0].upper() + "."
     if not initials:
         initials = ""
-    form_gpa=f"{gpa:.2f}"
+    form_gpa = f"{gpa:.2f}"
     return f"{family} {initials}, гр. {group}, GPA {form_gpa}"
+
+
 print(format_record(("Петров Пётр", "IKBO-12", 5.0)))
 print(format_record(("Петров Пётр Петрович", "IKBO-12", 5.0)))
 print(format_record(("Петров Пётр Петрович", "IKBO-12", 5.0)))
